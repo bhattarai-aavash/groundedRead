@@ -211,6 +211,8 @@ The page shows grounding badge, attempts, citations, unique sources, expandable 
 
 ## Setup
 
+After cloning from GitHub, the corpus PDFs are **not** in the repo (they are gitignored). Copy your own copies into `data/papers/` using the filenames in [Paper corpus](#paper-corpus), then ingest.
+
 ```bash
 python3.11 -m venv .venv
 source .venv/bin/activate
@@ -220,7 +222,7 @@ cp .env.example .env          # optional; CONFIG reads os.environ
 ollama pull llama3.1
 export LLM_PROVIDER=ollama
 
-# PDFs → data/papers/ named as in the corpus list below
+# PDFs → data/papers/ named as in the corpus list below (not shipped in git)
 dsqa ingest data/papers
 dsqa stats
 dsqa ask "How does Raft elect a leader?" --verbose
@@ -306,7 +308,7 @@ All settings are environment variables in `dsqa/config.py`. Truthy flags: `1`, `
 
 ## Paper corpus
 
-Any `*.pdf` in the ingest directory is indexed. Eval gold `source` names expect these filenames (33 papers):
+Any `*.pdf` in the ingest directory is indexed. The papers themselves are not in git — add them locally after clone. Eval gold `source` names expect these filenames (33 papers):
 
 **Systems:** `gfs.pdf`, `mapreduce.pdf`, `bigtable.pdf`, `chubby.pdf`, `spanner.pdf`, `f1.pdf`, `megastore.pdf`, `dremel.pdf`, `pregel.pdf`, `millwheel.pdf`, `borg.pdf`, `dynamo.pdf`, `cassandra.pdf`, `kafka.pdf`, `ceph.pdf`, `spark.pdf`, `dapper.pdf`
 
