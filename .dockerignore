@@ -1,0 +1,13 @@
+.venv
+.chroma
+.chroma-*
+.cache
+.git
+__pycache__
+*.pyc
+eval/results
+.mypy_cache
+.ruff_cache
+.pytest_cache
+data/papers/*.pdf
+node_modules

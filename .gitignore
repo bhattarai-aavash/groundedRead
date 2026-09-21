@@ -1,0 +1,19 @@
+.chroma/
+.chroma-*/
+.cache/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+eval/results/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.DS_Store
+node_modules/
+
+# User-supplied papers and generated indexes (not redistributed)
+*.pdf
+data/chroma/

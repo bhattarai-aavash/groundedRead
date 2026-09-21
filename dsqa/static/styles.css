@@ -1,0 +1,244 @@
+:root {
+  --bg: #f4efe6;
+  --ink: #1c1915;
+  --muted: #6b6458;
+  --line: #d9d0c3;
+  --paper: #fffdf8;
+  --accent: #8c2f1b;
+  --ok: #2d5a3d;
+  --warn: #8a5a12;
+}
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font: 16px/1.5 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 500px at 10% -10%, #efe4d4 0%, transparent 55%),
+    var(--bg);
+}
+
+.wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 2.25rem 1.25rem 4rem;
+}
+
+header { margin-bottom: 1.5rem; }
+
+header h1 {
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.25rem;
+}
+
+header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.9rem;
+  margin: 1rem 0 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.meta span {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 0.15rem 0.45rem;
+}
+
+form { display: grid; gap: 0.75rem; }
+
+textarea {
+  width: 100%;
+  min-height: 6.5rem;
+  resize: vertical;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  padding: 0.85rem 1rem;
+  outline: none;
+}
+
+textarea:focus { border-color: var(--accent); }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+button {
+  font: 600 0.95rem/1 ui-sans-serif, system-ui, sans-serif;
+  background: var(--ink);
+  color: var(--bg);
+  border: 0;
+  padding: 0.65rem 1.15rem;
+  cursor: pointer;
+}
+
+button:hover { background: var(--accent); }
+
+button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chips button {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  font-weight: 500;
+  padding: 0.3rem 0.55rem;
+  font-size: 0.78rem;
+}
+
+.chips button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+.status {
+  min-height: 1.25rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.status.error { color: var(--accent); }
+
+article {
+  margin-top: 1.5rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 1.15rem 1.25rem;
+}
+
+article.hidden { display: none; }
+
+.badge {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72rem;
+  padding: 0.12rem 0.4rem;
+  border: 1px solid var(--line);
+  margin-right: 0.4rem;
+}
+
+.badge.ok { color: var(--ok); }
+
+.badge.warn { color: var(--warn); }
+
+.answer {
+  white-space: pre-wrap;
+  margin: 0.85rem 0 0;
+}
+
+.cite {
+  color: var(--accent);
+  font-size: 0.88em;
+}
+
+h2 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 1.25rem 0 0.4rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+h2 .plain {
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+details { margin-top: 0.35rem; }
+
+details summary {
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.excerpt {
+  font-size: 0.88rem;
+  color: var(--muted);
+  white-space: pre-wrap;
+  max-height: 12rem;
+  overflow: auto;
+  border-left: 2px solid var(--line);
+  padding: 0.35rem 0.6rem;
+  margin: 0.35rem 0 0.7rem;
+}
+
+.trace {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: pre-wrap;
+}
+
+table.spans {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+}
+
+table.spans th,
+table.spans td {
+  text-align: left;
+  padding: 0.2rem 0.4rem 0.2rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+table.spans th {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .wrap { padding: 1.25rem 1rem 3rem; }
+  header h1 { font-size: 1.4rem; }
+}

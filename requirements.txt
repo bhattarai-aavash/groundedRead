@@ -1,0 +1,9 @@
+langgraph>=0.2.0
+chromadb>=0.5.0
+pdfplumber>=0.11.0
+pymupdf>=1.24.0
+sentence-transformers>=3.0.0
+# Optional cloud backends — imported lazily in dsqa/llm.py
+# anthropic
+# openai
+# Dev: pip install -e ".[dev]"

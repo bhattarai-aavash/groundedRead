@@ -1,0 +1,33 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama:/root/.ollama
+    ports:
+      - "11434:11434"
+
+  dsqa:
+    build: .
+    environment:
+      LLM_PROVIDER: ollama
+      LLM_MODEL: llama3.1
+      OLLAMA_HOST: http://ollama:11434
+      GROUNDING_CHECK: "true"
+      MAX_STEPS: "4"
+      USE_BM25: "true"
+      USE_RERANK: "false"
+      CONTEXTUAL: "true"
+      EXTRACTOR: pymupdf
+    ports:
+      - "8765:8765"
+    volumes:
+      - ./data:/app/data
+      - chroma:/app/.chroma
+      - cache:/app/.cache
+    depends_on:
+      - ollama
+
+volumes:
+  ollama:
+  chroma:
+  cache:

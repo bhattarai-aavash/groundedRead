@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dsqa — paper Q&amp;A</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>dsqa</h1>
+      <p>Ask questions over ingested distributed-systems papers. Answers are grounded in retrieved excerpts.</p>
+      <div class="meta" id="meta">loading index…</div>
+    </header>
+    <form id="form">
+      <label class="visually-hidden" for="q">Question</label>
+      <textarea id="q" name="q" required placeholder="How does Raft elect a leader?"></textarea>
+      <div class="chips" id="chips"></div>
+      <div class="row">
+        <button type="submit" id="go">Ask</button>
+        <div class="status" id="status" role="status"></div>
+      </div>
+    </form>
+    <article id="out" class="hidden"></article>
+  </div>
+  <script type="module" src="/static/app.js"></script>
+</body>
+</html>
